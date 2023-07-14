@@ -8,7 +8,7 @@ fn init() {
     let rng: u8 = thread_rng().gen_range(0..=100);
     let mut gcount: u8 = 1;
     println!("{}", &rng);
-    println!("Enter a number from 0-100");
+    println!("Enter a number from 0-100, you will lose after 5 times");
     loop {
         let mut line = String::from("");
         std::io::stdin().read_line(&mut line).unwrap();
@@ -17,7 +17,7 @@ fn init() {
             println!("Great you win!");
             break;
         }
-        else if gcount > 5 { 
+        else if gcount > 4 { 
             println!("Too many guesses! you lost");
             break;
         }
